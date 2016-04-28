@@ -21,7 +21,7 @@ int main()
 	addWeighted(hsvR, 1.0, hsvR2, 1.0, 0.0, hsvR);
 
 
-
+	
 	vector<int> params;
 	params.push_back(IMWRITE_JPEG_QUALITY);
 	params.push_back(100);
@@ -30,6 +30,8 @@ int main()
 	imwrite("sample1_outB.jpg", hsvB, params);
 	imwrite("sample1_outY.jpg", hsvY, params);
 
+
+	// remove noise
 	IplImage* img_r_ = cvLoadImage("sample1_outR.jpg");
 	IplImage* img_g_ = cvLoadImage("sample1_outG.jpg");
 	IplImage* img_b_ = cvLoadImage("sample1_outB.jpg");
